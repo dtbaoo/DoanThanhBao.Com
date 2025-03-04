@@ -21,7 +21,18 @@
  </a>
 </p>
 </div>
- 
+     <title>Thông báo sau 20 giây</title>
+    <script>
+        setTimeout(function() {
+            alert("cần gì thì chọn đi ngắm quài vậy =))) ");
+        }, 20000); // 20000ms = 20s
+    </script>
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+</body>
+</html>
 <script>
         setTimeout(function(){ if (!isclick) { swal("Hmm!!","Ngắm gì mà lâu vậy =)) cần gì thì chọn dii đừng ngạii","info"); } }, 30000);
     </script>
@@ -684,40 +695,43 @@
 <img alt="" class="display-image m-auto" src="user.png" />
 <h2 class="page-title page-text-color page-text-font mt-16 text-center">
 Đoàn Thanh Bảo
-<div class="background-music">
-  <audio controls id="audio" style="margin-top: 20px;">
-    <source src="nhac.mp3.mp4" type="audio/mp3">
-    Trình duyệt của bạn không hỗ trợ thẻ audio.
-  </audio>
-  <input type="file" accept="audio/*" id="audioFile" style="display: none;">
-</div>
+<div class="background-music"> 
+  <div class="song-name-container"> 
+    <marquee id="song-name">Viết tiếp câu chuyện hòa bình</marquee> 
+  </div> 
+  <audio controls id="audio" ontimeupdate="checkDuration()"> 
+    <source src="amnhac.mp4" type="audio/mp3"> 
+    Trình duyệt của bạn không hỗ trợ thẻ audio. 
+  </audio> 
+</div> 
 
-<div class="footer">
-  <p style="text-align: center;"></p>
-  <p style="text-align: center; margin-top: 10px; margin-left: 20px;">
-    <a href="https://www.instagram.com/doanthanhbaooo" target="_blank" style="margin-left: 10px;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1DA1F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="2.18" fill="#fff" stroke="#1DA1F2"></rect>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-        <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
-      </svg>
-    </a>
-    <button onclick="playAudio()">Play</button>
-  </p>
-</div>
+<div class="footer"> 
+  <p style="text-align: center; margin-top: 10px;"> 
+    <a href="https://www.instagram.com/doanthanhbaooo" target="_blank"> 
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1DA1F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> 
+        <rect x="2" y="2" width="20" height="20" rx="2.18" fill="#fff" stroke="#1DA1F2"></rect> 
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path> 
+        <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line> 
+      </svg> 
+    </a> 
+    <button onclick="playAudio()">Play</button> 
+  </p> 
+</div> 
 
-<script>
-  const audio = document.getElementById('audio');
-  const audioFile = document.getElementById('audioFile');
+<script> 
+  const audio = document.getElementById('audio'); 
+  const duration = 4 * 60 * 1000; // 4 phút 
 
-  audioFile.addEventListener('change', function() {
-    const file = audioFile.files[0];
-    audio.src = URL.createObjectURL(file);
-  });
+  function checkDuration() { 
+    if (audio.currentTime >= duration) { 
+      audio.pause(); 
+      audio.currentTime = 0; 
+    } 
+  } 
 
-  function playAudio() {
-    audio.play();
-  }
+  function playAudio() { 
+    audio.play(); 
+  } 
 </script>
 <div class="page-bioline text-fs-16 page-text-color page-text-font mt-8 ln-h-22 text-center"> tải đề ở dưới
 </div>
