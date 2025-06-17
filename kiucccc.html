@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thông báo</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+    }
+
+    .dialog {
+      width: 300px;
+      padding: 20px;
+      border: 2px solid #0096d6;
+      background-color: #e6f1f8;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      margin: 100px auto;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .dialog h3 {
+      margin: 0;
+      background-color: #0096d6;
+      color: white;
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+
+    .dialog-content {
+      display: flex;
+      align-items: center;
+      padding: 15px 10px;
+      background-color: white;
+    }
+
+    .dialog-content img {
+      width: 32px;
+      height: 32px;
+      margin-right: 15px;
+    }
+
+    .dialog button {
+      display: block;
+      margin: 10px auto 0;
+      padding: 5px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="dialog">
+  <h3>Thông báo</h3>
+  <div class="dialog-content">
+    <!-- Biểu tượng sọt rác -->
+    <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Trash Icon">
+    <span>Hạn sử dụng còn: 24</span>
+  </div>
+  <button>OK</button>
+</div>
+
+</body>
+</html>
